@@ -1,0 +1,5 @@
+Flask==2.3.3
+transformers==4.30.2
+PyMuPDF==1.21.0
+langchain-groq==0.0.5
+torch==2.0.1  

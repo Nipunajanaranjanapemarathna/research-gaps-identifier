@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Research Gaps Identifier</h1>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="pdf_files" accept=".pdf" required>
+            <input type="file" name="pdf_files" accept=".pdf" required>
+            <input type="file" name="pdf_files" accept=".pdf" required>
+            <button type="submit">Summarize</button>
+        </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <div class="summaries">
+            <h2>Summaries</h2>
+            <p><strong>Summary 1:</strong> {{ summary1 }}</p>
+            <p><strong>Summary 2:</strong> {{ summary2 }}</p>
+            <p><strong>Summary 3:</strong> {{ summary3 }}</p>
+        </div>
+        
+        {% if llm_response %}
+        <div class="llm-response">
+            <h2>Research Gaps</h2>
+            <p>{{ llm_response }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
+
+
